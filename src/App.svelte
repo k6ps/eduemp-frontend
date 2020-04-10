@@ -11,11 +11,11 @@
 
 <Router url="{url}">
     <header>
-			<div class="wrapper">
-				<div class="logo">
-					<img src="img/logo.svg" alt="EduEmp logo"/>
-				</div>
-			</div>
+        <div class="wrapper">
+            <div class="logo">
+                <img src="img/logo.svg" alt="EduEmp logo"/>
+            </div>
+        </div>
     </header>
     <main>
         <Route path="student" component="{StudentHome}" />
@@ -24,8 +24,8 @@
         <Route path="/"><Home /></Route>
     </main>
     <footer>
-			<div class="wrapper">
-        <span>This is the footer</span>
-			</div>
+        <div class="wrapper">
+            <span>This is the footer</span>
+        </div>
     </footer>
 </Router>
