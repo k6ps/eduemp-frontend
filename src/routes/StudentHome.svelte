@@ -2,6 +2,7 @@
 	import StudentMyCurriculum from './StudentMyCurriculum.svelte';
 	import StudentIAmInterestedIn from './StudentIAmInterestedIn.svelte';
 	import StudentMatchingEmployers from './StudentMatchingEmployers.svelte';
+	import StudentIfIDecidedToChoose from './StudentIfIDecidedToChoose.svelte';
 </script>
 
 <div class="content">
@@ -14,6 +15,9 @@
 		</div>
 		<div class="col">
 			<StudentMatchingEmployers/>
+		</div>
+		<div class="col">
+			<StudentIfIDecidedToChoose/>
 		</div>
 	</div>
 </div>
