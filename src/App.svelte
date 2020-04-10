@@ -1,17 +1,29 @@
 <script>
-	export let name;
+	import { Router, Link, Route } from "svelte-routing";
+
+	import Home from "./routes/Home.svelte";
+	import StudentHome from "./routes/StudentHome.svelte";
+	import EmployerHome from "./routes/EmployerHome.svelte";
+	import UniversityHome from "./routes/UniversityHome.svelte";
+
+	export let url = "";
 </script>
 
-<header>
-	<div class="logo">
-		<img src="img/logo.png" alt="EduEmp logo"/>
-	</div>
-</header>
-<main>
-	<ul class="role-selection">
-		<li><a href="student/index.html">I am student/potential employee</a></li>
-		<li><a href="employer/index.html">I am employer representative</a></li>
-		<li><a href="university/index.html">I am university programme manager</a></li>
-	</ul>
-	<div class="slogan">students want to be hired, employers need skilled workforce, univerisity  programmes are outdated!</div>
-</main>
+<Router url="{url}">
+    <header>
+        <div class="logo">
+            <Link to="/">
+                <img src="img/logo.png" alt="EduEmp logo"/>
+            </Link>
+        </div>
+    </header>
+    <main>
+        <Route path="student" component="{StudentHome}" />
+        <Route path="employer" component="{EmployerHome}" />
+        <Route path="university" component="{UniversityHome}" />
+        <Route path="/"><Home /></Route>
+    </main>
+    <footer>
+        <span>This is the footer</span>
+    </footer>
+</Router>
