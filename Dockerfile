@@ -8,4 +8,4 @@ VOLUME /app
 
 EXPOSE 5000
 
-CMD npm run build && npm run start
+CMD npm install && npm run build && npm run start
