@@ -1,4 +1,8 @@
-<h2 class="section-title">My Curriculum</h2>
+<script>
+	import SectionTitle from '../components/SectionTitle.svelte';
+</script>
+
+<SectionTitle sectionTitle="My Curriculum"/>
 <table>
     <thead>
         <tr>
