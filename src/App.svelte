@@ -6,7 +6,7 @@
 	import EmployerHome from "./routes/EmployerHome.svelte";
 	import UniversityHome from "./routes/UniversityHome.svelte";
 
-	export let url = "";
+    export let url = "";
 </script>
 
 <Router url="{url}">
