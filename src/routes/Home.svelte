@@ -8,11 +8,29 @@
 	export let url = "/";
 </script>
 
-<Router url="{url}">
-	<ul class="role-selection">
-		<li><Link to="student">I am student/potential employee</Link></li>
-		<li><Link to="employer">I am employer representative</Link></li>
-		<li><Link to="university">I am university programme manager</Link></li>
-	</ul>
-</Router>
-<div class="slogan">students want to be hired, employers need skilled workforce, univerisity  programmes are outdated!</div>
+<div class="content hero">
+	<div class="wrapper">
+		<div class="col">
+			<div class="slogan">
+				students want to be hired,<br>
+				employers need skilled workforce,<br>
+				univerisity  programmes are outdated –<br>
+				<span class="green">we help you all to collaborate<span>
+			</div>
+			<Router url="{url}">
+				<ul class="role-selection">
+					<li><a class="button" href="student/index.html">I am student/potential employee</a></li>
+					<li><a class="button" href="employer/index.html">I am employer representative</a></li>
+					<li><a class="button" href="university/index.html">I am university programme manager</a></li>
+				</ul>
+			</Router>
+		</div>
+		<div class="col img-col">
+			<img src="img/hero.png" alt="Hero!"/>
+		</div>
+	</div>
+</div>
+<div class="content">
+	<div class="wrapper">
+	</div>
+</div>

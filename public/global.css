@@ -5,15 +5,63 @@ html, body {
 }
 
 body {
-	color: #333;
+	color: #616161;
 	margin: 0;
-	padding: 8px;
+	padding: 0;
 	box-sizing: border-box;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+	font-family: "forma-djr-micro", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 20px;
+	-webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
+
+/* layout */
+
+header {
+	padding: 18px 0
+}
+
+.hero {
+	color: #fff;
+	background-color: #9500FF;
+}
+
+.content {
+	padding: 60px 0;
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: auto;
+}
+
+@media only screen and (max-width: 1240px) {
+  .wrapper {
+    padding: 0 20px;
+  }
+}
+
+.col {
+	width: 50%;
+	display: inline-block;
+	float: left;
+}
+
+.img-col {
+	margin-bottom: -60px;
+}
+
+/* links */
+
 a {
-	color: rgb(0,100,200);
+	color: #9500FF;
 	text-decoration: none;
 }
 
@@ -22,12 +70,11 @@ a:hover {
 }
 
 a:visited {
-	color: rgb(0,80,160);
+	color: #9500FF;
 }
 
-label {
-	display: block;
-}
+
+/* inputs */
 
 input, button, select, textarea {
 	font-family: inherit;
@@ -47,20 +94,89 @@ input[type="range"] {
 	height: 0;
 }
 
-button {
-	color: #333;
-	background-color: #f4f4f4;
+
+/* buttons */
+
+.button {
+	color: #9500FF;
+	background-color: #00F4B7;
+	font-weight: 700;
 	outline: none;
+	font-size: 18px;
+	padding: 10px 18px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	display: inline-block;
 }
 
-button:disabled {
-	color: #999;
+.button:hover {
+	text-decoration: none;
+	-webkit-box-shadow: inset 0px -5px 0px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: inset 0px -5px 0px 0px rgba(0,0,0,0.2);
+	box-shadow: inset 0px -5px 0px 0px rgba(0,0,0,0.2);
 }
 
-button:not(:disabled):active {
-	background-color: #ddd;
+.button:disabled {
+	opacity: 0.5;
 }
 
-button:focus {
-	border-color: #666;
+.button:not(:disabled):active {
+	-webkit-box-shadow: inset 0px -58px 0px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: inset 0px -58px 0px 0px rgba(0,0,0,0.2);
+	box-shadow: inset 0px -58px 0px 0px rgba(0,0,0,0.2);
+
+}
+
+.button:focus {
+	border-color: #FFD700;
+}
+
+.button:visited {
+	opacity: 0.5;
+	color: #9500FF;
+}
+
+
+/* list */
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+.role-selection li {
+	list-style-type: none;
+	display: inline-block;
+}
+
+
+/* text */
+
+.slogan {
+	font-size: 1.6em;
+	line-height: 1.4em;
+	margin-bottom: 30px;
+	font-weight: 700;
+}
+.green {
+	color: #00F4B7;
+}
+
+
+/* misc */
+
+label {
+	display: block;
+}
+
+.logo {
+	line-height: 0;
+}
+
+.logo img {
+	height: 30px;
+}
+
+img {
+	max-width: 100%;
 }
