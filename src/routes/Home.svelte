@@ -12,7 +12,7 @@
 	<div class="wrapper">
 		<div class="col">
 			<div class="slogan">
-				students want to be hired,<br>
+				Students want to be hired,<br>
 				employers need skilled workforce,<br>
 				univerisity  programmes are outdated –<br>
 				<span class="green">we help you all to collaborate<span>
