@@ -4,8 +4,16 @@
 	import StudentMatchingEmployers from './StudentMatchingEmployers.svelte';
 </script>
 
-<StudentMyCurriculum/>
-
-<StudentIAmInterestedIn/>
-
-<StudentMatchingEmployers/>
+<div class="content">
+	<div class="wrapper">
+		<div class="col">
+			<StudentMyCurriculum/>
+		</div>
+		<div class="col">
+			<StudentIAmInterestedIn/>
+		</div>
+		<div class="col">
+			<StudentMatchingEmployers/>
+		</div>
+	</div>
+</div>

@@ -13,7 +13,9 @@
     <header>
         <div class="wrapper">
             <div class="logo">
-                <img src="img/logo.svg" alt="EduEmp logo"/>
+							<a href="/">
+                	<img src="img/logo.svg" alt="EduEmp logo"/>
+							</a>
             </div>
         </div>
     </header>
