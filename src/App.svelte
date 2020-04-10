@@ -4,7 +4,9 @@
 
 <main>
     <section class="header">
-        <h1 class="logo">EduEmp</h1>
+		<div class="logo">
+			<img src="img/logo.png" alt="EduEmp logo"/>
+		</div>
     </section>
     <section class="content">
         <ul class="role-selection">
@@ -12,6 +14,7 @@
             <li><a href="employer/index.html">I am employer representative</a></li>
             <li><a href="university/index.html">I am university programme manager</a></li>
         </ul>
+		<div class="slogan">students want to be hired, employers need skilled workforce, univerisity  programmes are outdated!</div>
     </section>
     <section class="footer">
     </section>
