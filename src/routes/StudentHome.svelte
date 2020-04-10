@@ -11,4 +11,4 @@
 
 <StudentMatchingEmployers/>
 
-<StudentIfIDecidedToChoose/>:
+<StudentIfIDecidedToChoose/>
