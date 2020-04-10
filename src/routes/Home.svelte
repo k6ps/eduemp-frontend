@@ -19,9 +19,9 @@
 			</div>
 			<Router url="{url}">
 				<ul class="role-selection">
-					<li><a class="button" href="student/index.html">I am student/potential employee</a></li>
-					<li><a class="button" href="employer/index.html">I am employer representative</a></li>
-					<li><a class="button" href="university/index.html">I am university programme manager</a></li>
+					<li><a class="button" href="student">I am student/potential employee</a></li>
+					<li><a class="button" href="employer">I am employer representative</a></li>
+					<li><a class="button" href="university">I am university programme manager</a></li>
 				</ul>
 			</Router>
 		</div>
