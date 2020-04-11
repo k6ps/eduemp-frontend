@@ -9,7 +9,7 @@
             matchPercentage: 90
         },
         {
-            organizationName: 'Company 7',
+            organizationName: 'Company 7777',
             jobTitle: 'Job 7',
             matchPercentage: 75
         }
@@ -22,10 +22,9 @@
 
 <SectionTitle sectionTitle="…then these jobs also match"/>
 <ul class="profiles">
+    {#each potentialMatchingJobs as potentialMatchingJob}
     <li>
-        <JobMatchItem jobMatch={potentialMatchingJobs[0]}/>
+        <JobMatchItem jobMatch={potentialMatchingJob}/>
     </li>
-    <li>
-        <JobMatchItem jobMatch={potentialMatchingJobs[1]}/>
-    </li>
+    {/each}
 </ul>
