@@ -4,10 +4,10 @@
 
 <SectionTitle sectionTitle="My Requirements"/>
 <select>
-    <option value="" selected="selected">-- All Positions --</option>
-    <option value="position1">Position 1</option>
-    <option value="position2">Position 2</option>
-    <option value="position3">Position 3</option>
+    <option value="" selected="selected">-- All Jobs --</option>
+    <option value="job1">Job 1</option>
+    <option value="job2">Job 2</option>
+    <option value="job3">Job 3</option>
 </select>
 <table>
     <thead>
@@ -35,5 +35,5 @@
         </tr>
     </tbody>
 </table>
-<a class="button">Add a Position</a>
+<a class="button">Add a Job</a>
 <a class="button">Add a Requirement</a>
