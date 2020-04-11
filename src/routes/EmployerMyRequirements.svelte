@@ -25,24 +25,40 @@
         },
     ];
 
-    function currentlyFilteredJobsRequireSubject(subjectId) {
-        let jobIds = [];
-        myJobs.forEach(job => job.requiredSubjectIds.forEach(id => {
-            if (!jobIds.includes(id)) {
-                jobIds = [...jobIds, id];
+    let filteredJobs = myJobs;
+    let filterValue;
+    function createCurrentlyFilteredJobSubjectIds() {
+        let subjectIds = [];
+        filteredJobs.forEach(job => job.requiredSubjectIds.forEach(id => {
+            if (!subjectIds.includes(id)) {
+                subjectIds = [...subjectIds, id];
             }
         }));
-        return jobIds.includes(subjectId);
+        return subjectIds;
+    }
+    let filteredJobSubjectIds = createCurrentlyFilteredJobSubjectIds();
+    function filterMyJobs() {
+        if (!filterValue || filterValue == '') {
+            filteredJobs = myJobs;
+        } else {
+            filteredJobs = [];
+            myJobs.forEach(it => {
+                if (it.id && filterValue == it.id) {
+                    filteredJobs = [...filteredJobs, it];
+                }
+            });
+        }
+        filteredJobSubjectIds = createCurrentlyFilteredJobSubjectIds();
     }
 
 </script>
 
 <SectionTitle sectionTitle="My Requirements"/>
-<select>
+<select bind:value={filterValue} on:change={filterMyJobs}>
     <option value="" selected="selected">-- All Jobs --</option>
-    <option value="job1">Job 1</option>
-    <option value="job2">Job 2</option>
-    <option value="job3">Job 3</option>
+    {#each myJobs as job}
+        <option value={job.id}>{job.title}</option>
+    {/each}
 </select>
 <table>
     <thead>
@@ -54,7 +70,7 @@
     </thead>
     <tbody>
         {#each allSubjects as subject}
-            {#if currentlyFilteredJobsRequireSubject(subject.id)}
+            {#if filteredJobSubjectIds.includes(subject.id)}
                 <tr>
                     <td>{subject.title}</td>
                     <td>{subject.employerNeeds > 0 ? 'yes' : 'no'}</td>
