@@ -1,5 +1,19 @@
 <script>
-	import SectionTitle from '../components/SectionTitle.svelte';
+    import SectionTitle from '../components/SectionTitle.svelte';
+    import JobMatchItem from '../components/JobMatchItem.svelte';
+    
+    const potentialMatchingJobs = [
+        {
+            organizationName: 'Company 6',
+            jobTitle: 'Job 6',
+            matchPercentage: 90
+        },
+        {
+            organizationName: 'Company 7',
+            jobTitle: 'Job 7',
+            matchPercentage: 75
+        }
+    ];
 </script>
 
 <SectionTitle sectionTitle="If I Decided to Choose"/>
@@ -9,19 +23,9 @@
 <SectionTitle sectionTitle="…then these jobs also match"/>
 <ul class="profiles">
     <li>
-        <div class="employer-with-match">
-            <img src="/img/placeholder.svg" alt="Company 6 Logo" />
-            <span>Company 6</span>
-            <span>Job 6</span>
-            <span>90%</span>
-        </div>
+        <JobMatchItem jobMatch={potentialMatchingJobs[0]}/>
     </li>
     <li>
-        <div class="employer-with-match">
-            <img src="/img/placeholder.svg" alt="Company 7 Logo" />
-            <span>Company 7</span>
-            <span>Job 7</span>
-            <span>75%</span>
-        </div>
+        <JobMatchItem jobMatch={potentialMatchingJobs[1]}/>
     </li>
 </ul>
