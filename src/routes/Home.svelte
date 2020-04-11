@@ -8,14 +8,14 @@
 	export let url = "/";
 </script>
 
-<div class="content hero">
+<div class="hero">
 	<div class="wrapper">
 		<div class="col col-40">
 			<div class="slogan">
-				students want to be hired,<br class="hideonmob">
-				employers need skilled workforce,<br class="hideonmob">
-				univerisity  programmes are outdated – <br class="hideonmob">
-				<span class="green">we help you all to collaborate<span>
+				Students want to be hired, <br class="hideonmob">
+				Employers are looking for talent, <br class="hideonmob">
+				University programs are not able to keep up – <br class="hideonmob">
+				<span class="green">SmartPick brings them on the same page<span>
 			</div>
 			<Router url="{url}">
 				<ul class="role-selection">
@@ -32,11 +32,50 @@
 </div>
 <div class="content">
 	<div class="wrapper">
-		<div class="col col-50">
-			<h1>Headline</h1>
-			<p>
-				Hell of kombucha <a href="student">banjo lomo</a>. Chambray green juice godard flexitarian YOLO fanny pack, twee tumeric. Kinfolk air plant af cray irony, cronut butcher you probably haven't heard of them umami yuccie pok pok locavore 3 wolf moon typewriter. XOXO chillwave YOLO, neutra chicharrones helvetica subway tile schlitz knausgaard sriracha hexagon try-hard. Marfa before they sold out microdosing celiac fanny pack letterpress palo santo heirloom
-			</p>
+		<div class="col col-100 center-headline">
+			<h1 class="center-headline">Benefits</h1>
+		</div>
+		<div class="col col-30">
+			<h2>Student</h2>
+			<ul>
+				<li>
+					Fast forward your career - choose a path that matters to the employer of your dreams
+				</li>
+				<li>
+					Design your study journey to support your career from the beginning
+				</li>
+				<li>
+					Get hired while you're studying
+				</li>
+			</ul>
+		</div>
+		<div class="col col-30">
+			<h2>Employer</h2>
+			<ul>
+				<li>
+					You can help to create an education path for the talents you want to hire
+				</li>
+				<li>
+					Help to  desing an education journey to suit recruitment needs
+				</li>
+				<li>
+					Give suggestions to all parties, what is the skillset need in the market
+				</li>
+			</ul>
+		</div>
+		<div class="col col-30">
+			<h2>University</h2>
+			<ul>
+				<li>
+					Innovative universities offer an agile approach to higher education
+				</li>
+				<li>
+					Collaborating with employers
+				</li>
+				<li>
+					Attracting students with the modern system in accordance with the job market they are about to enter
+				</li>
+			</ul>
 		</div>
 	</div>
 </div>

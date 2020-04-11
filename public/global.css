@@ -64,15 +64,18 @@ footer {
 	margin-bottom: 20px;
 	/* border: 1px solid #9500FF; */
 }
+.col-100 {
+	width: 100%;
+}
+.col-60 {
+	width: 60%;
+}
 .col-50 {
 	width: calc(100%/2 - 50px);
 	flex-grow:0;
 }
 .col-40 {
 	width: 40%;
-}
-.col-60 {
-	width: 60%;
 }
 .col-30 {
 	width: calc(100%/3 - 53px);
@@ -218,9 +221,31 @@ input[type="range"] {
 
 /* list */
 
-ul {
+.hero ul {
 	padding: 0;
 	margin: 0;
+}
+
+.content ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.content li {
+	position: relative;
+  padding-left: 30px;
+}
+.content li::before{
+	content: '';
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    background-image: url('/favicon.png');
+    background-size: cover;
+    background-position: center;
+    left: 0;
+    top: 0;
+    transform: translateY(20%);
 }
 .role-selection li,
 .profiles li {
@@ -262,9 +287,20 @@ h2 {
 	line-height: 1.4em;
 	margin-bottom: 30px;
 	font-weight: 700;
+	white-space:nowrap;
+}
+@media only screen and (max-width: 1240px) {
+	.slogan {
+		white-space:normal; 
+	}
 }
 .green {
 	color: #00F4B7;
+}
+.center-headline {
+	padding-bottom: 0;
+	margin: 0;
+	text-align: center;
 }
 
 
