@@ -13,9 +13,9 @@
     <header>
         <div class="wrapper">
             <div class="logo">
-							<a href="/">
+                <a href="/">
                 	<img src="img/logo.svg" alt="EduEmp logo"/>
-							</a>
+                </a>
             </div>
         </div>
     </header>
@@ -26,12 +26,12 @@
         <Route path="/"><Home /></Route>
     </main>
     <footer>
-				<div class="content">
-				    <div class="wrapper">
-								<div class="col">
-				            <span>developed @ <a href="https://theglobalhack.com" target="_blank">#theglobalhack<a/></span>
-				        </div>
-						</div>
-				</div>
+        <div class="content">
+            <div class="wrapper">
+                <div class="col">
+                    <span>developed @ <a href="https://theglobalhack.com" target="_blank">#theglobalhack</a></span>
+                </div>
+            </div>
+        </div>
     </footer>
 </Router>
