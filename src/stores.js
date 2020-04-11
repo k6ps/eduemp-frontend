@@ -3,43 +3,49 @@ import { readable, writable } from 'svelte/store';
 export const allSubjectsData = readable([
 	{
 		id: "subject1",
-		title: "Subject 1",
+		title: "Anatomy and Physiology",
 		uniersityOffers: true,
 		employerNeeds: true
 	},
 	{
 		id: "subject2",
-		title: "Subject 2",
+		title: "Foundations of Nursing",
 		uniersityOffers: false,
 		employerNeeds: true
 	},
 	{
 		id: "subject3",
-		title: "Subject 333",
+		title: "Internal Patient Nursing",
 		uniersityOffers: false,
 		employerNeeds: false
 	},
 	{
 		id: "subject4",
-		title: "Subject 4",
+		title: "Mental Health Nursing",
 		uniersityOffers: true,
 		employerNeeds: false
 	},
 	{
 		id: "subject5",
-		title: "Subject 5",
+		title: "Psychology",
 		uniersityOffers: false,
 		employerNeeds: true
 	},
 	{
 		id: "subject6",
-		title: "Subject 6",
+		title: "War and Disaster Medicine",
 		uniersityOffers: false,
 		employerNeeds: true
 	},
 	{
 		id: "subject7",
-		title: "Subject 7777",
+		title: "Adult Health Behaviour",
+		uniersityOffers: true,
+		employerNeeds: true
+	},
+	{
+		id: "subject8",
+		title: "In-Depth Knowledge in Intensive Nursing",
 		uniersityOffers: true,
 		employerNeeds: true
 	},
