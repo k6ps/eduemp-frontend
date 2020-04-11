@@ -15,13 +15,14 @@
 				Students want to be hired, <br class="hideonmob">
 				Employers are looking for talent, <br class="hideonmob">
 				University programs are not able to keep up – <br class="hideonmob">
-				<span class="green">SmartPick brings them on the same page<span>
+				<span class="green">SmartPick brings them on the same page</span>
 			</div>
 			<Router url="{url}">
+				<h3>Pick your role:</h3>
 				<ul class="role-selection">
-					<li><a class="button" href="student">I am student/potential employee</a></li>
-					<li><a class="button" href="employer">I am employer representative</a></li>
-					<li><a class="button" href="university">I am university programme manager</a></li>
+					<li><a class="button" href="student">Student</a></li>
+					<li><a class="button" href="employer">Employer</a></li>
+					<li><a class="button" href="university">University</a></li>
 				</ul>
 			</Router>
 		</div>
