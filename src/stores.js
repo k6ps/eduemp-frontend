@@ -1,4 +1,4 @@
-import { readable } from 'svelte/store';
+import { readable, writable } from 'svelte/store';
 
 export const allSubjectsData = readable([
 	{
@@ -44,3 +44,5 @@ export const allSubjectsData = readable([
 		employerNeeds: true
 	},
 ]);
+
+export const myCurriculumSubjectIds = writable(["subject1", "subject3"]);
