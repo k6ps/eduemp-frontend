@@ -6,17 +6,17 @@
 </script>
 
 <div class="content">
-	<div class="wrapper">
-		<div class="col">
+	<div class="wrapper wrapper-of-boxes">
+		<div class="col col-50 col-box">
 			<StudentMyCurriculum/>
 		</div>
-		<div class="col">
+		<div class="col col-50 col-box">
 			<StudentIAmInterestedIn/>
 		</div>
-		<div class="col">
+		<div class="col col-50 col-box">
 			<StudentMatchingEmployers/>
 		</div>
-		<div class="col">
+		<div class="col col-50 col-box">
 			<StudentIfIDecidedToChoose/>
 		</div>
 	</div>

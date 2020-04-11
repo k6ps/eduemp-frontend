@@ -26,8 +26,12 @@
         <Route path="/"><Home /></Route>
     </main>
     <footer>
-        <div class="wrapper">
-            <span>This is the footer</span>
-        </div>
+				<div class="content">
+				    <div class="wrapper">
+								<div class="col">
+				            <span>developed @ <a href="https://theglobalhack.com" target="_blank">#theglobalhack<a/></span>
+				        </div>
+						</div>
+				</div>
     </footer>
 </Router>

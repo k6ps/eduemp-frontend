@@ -24,4 +24,4 @@
         </tr>
     </tbody>
 </table>
-<button>Add a Subject</button>
+<a class="button">Add a Subject</a>
