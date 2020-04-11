@@ -4,7 +4,7 @@
 
 <SectionTitle sectionTitle="Matching Students/Employees"/>
 <select>
-    <option value="" selected="selected">-- All Jobs --</option>
+    <option value="" selected="selected">All Jobs</option>
     <option value="job1">Job 1</option>
     <option value="job2">Job 2</option>
     <option value="job3">Job 3</option>

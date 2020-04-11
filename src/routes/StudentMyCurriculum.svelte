@@ -7,7 +7,7 @@
 	const unsubscribeAllSubjectsData = allSubjectsData.subscribe(it => {
 		allSubjects = it;
     });
-    
+
     let mySubjectIds = [];
 	const unsubscribeMyCurriculumSubjectIds = myCurriculumSubjectIds.subscribe(it => {
 		mySubjectIds = it;

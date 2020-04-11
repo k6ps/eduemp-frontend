@@ -51,7 +51,7 @@
 
 <SectionTitle sectionTitle="Matching Jobs"/>
 <select bind:value={filterValue} on:change="{filterMatchingJobs}">
-    <option value="" selected="selected">-- All Fields --</option>
+    <option value="" selected="selected">Show all</option>
     <option value="marketing">Marketing</option>
     <option value="management">Management</option>
     <option value="it">IT</option>

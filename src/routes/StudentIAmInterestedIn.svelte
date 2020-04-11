@@ -7,14 +7,14 @@
 	const unsubscribeAllSubjectsData = allSubjectsData.subscribe(it => {
 		allSubjects = it;
     });
-    
+
     let mySubjectIds = [];
 	const unsubscribeMyInterestedInSubjectIds = myInterestedInSubjectIds.subscribe(it => {
 		mySubjectIds = it;
     });
 </script>
 
-<SectionTitle sectionTitle="I Am Interested In"/>
+<SectionTitle sectionTitle="I'm interested in"/>
 <table>
     <thead>
         <tr>
@@ -36,4 +36,3 @@
     </tbody>
 </table>
 <AddSubjectButtonAndDialog mySubjectIdsSource={'myInterestedInSubjectIds'}/>
-

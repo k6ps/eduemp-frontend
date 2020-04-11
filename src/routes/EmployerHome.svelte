@@ -4,11 +4,11 @@
 </script>
 
 <div class="content">
-	<div class="wrapper">
-		<div class="col col-50">
+		<div class="wrapper wrapper-of-boxes">
+				<div class="col col-50 col-box">
             <EmployerMyRequirements/>
         </div>
-        <div class="col col-50">
+        <div class="col col-50 col-box">
             <EmployerMatchingStudents/>
         </div>
 	</div>

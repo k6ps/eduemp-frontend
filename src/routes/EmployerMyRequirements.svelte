@@ -1,7 +1,7 @@
 <script>
 	import SectionTitle from '../components/SectionTitle.svelte';
     import { allSubjectsData } from '../stores.js';
-    
+
     let allSubjects = [];
 	const unsubscribeAllSubjectsData = allSubjectsData.subscribe(it => {
 		allSubjects = it;
@@ -55,7 +55,7 @@
 
 <SectionTitle sectionTitle="My Requirements"/>
 <select bind:value={filterValue} on:change={filterMyJobs}>
-    <option value="" selected="selected">-- All Jobs --</option>
+    <option value="" selected="selected">All Jobs</option>
     {#each myJobs as job}
         <option value={job.id}>{job.title}</option>
     {/each}

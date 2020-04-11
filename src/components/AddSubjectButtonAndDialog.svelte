@@ -1,15 +1,15 @@
 <script>
     import { allSubjectsData, myCurriculumSubjectIds, myInterestedInSubjectIds } from '../stores.js';
 
-    export let mySubjectIdsSource; 
+    export let mySubjectIdsSource;
 
     let allSubjects = [];
 	const unsubscribeAllSubjectsData = allSubjectsData.subscribe(it => {
 		allSubjects = it;
     });
-    
+
     let mySubjectIds = [];
-    const unsubscribeMyCurriculumSubjectIds = (mySubjectIdsSource == 'myInterestedInSubjectIds') ? 
+    const unsubscribeMyCurriculumSubjectIds = (mySubjectIdsSource == 'myInterestedInSubjectIds') ?
     myInterestedInSubjectIds.subscribe(it => {
 		mySubjectIds = it;
     }) : myCurriculumSubjectIds.subscribe(it => {
@@ -47,7 +47,7 @@
 {#if showAddSubjectDialog}
     <div class="dialog">
         <select bind:value={selectedSubjectId}>
-            <option value="">-- Please Select Subject --</option>
+            <option value="">Select Subject</option>
             {#each allSubjects as subject}
                 {#if !mySubjectIds.includes(subject.id)}
                     <option value="{subject.id}">{subject.title}</option>

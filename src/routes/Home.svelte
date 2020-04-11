@@ -10,7 +10,7 @@
 
 <div class="hero">
 	<div class="wrapper">
-		<div class="col col-40">
+		<div class="col col-50">
 			<div class="slogan">
 				Students want to be hired, <br class="hideonmob">
 				Employers are looking for talent, <br class="hideonmob">
@@ -26,8 +26,8 @@
 				</ul>
 			</Router>
 		</div>
-		<div class="col img-col col-60">
-			<img src="img/hero.png" alt="Hero!"/>
+		<div class="col col-50 col-vid">
+			<iframe class="youtube" src="https://www.youtube.com/embed/IXkDFJkWSWU?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
 	</div>
 </div>
@@ -52,7 +52,7 @@
 		</div>
 		<div class="col col-30">
 			<h2>Employer</h2>
-			<ul>
+			<ul class="ul-bullet">
 				<li>
 					You can help to create an education path for the talents you want to hire
 				</li>
@@ -66,7 +66,7 @@
 		</div>
 		<div class="col col-30">
 			<h2>University</h2>
-			<ul>
+			<ul class="ul-bullet">
 				<li>
 					Innovative universities offer an agile approach to higher education
 				</li>

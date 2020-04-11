@@ -2,7 +2,7 @@
     import SectionTitle from '../components/SectionTitle.svelte';
     import JobMatchItem from '../components/JobMatchItem.svelte';
     import { allSubjectsData, myCurriculumSubjectIds, myRecommendedSubjectIds } from '../stores.js';
-    
+
     const potentialMatchingJobs = [
         {
             organizationName: 'Company 6',
@@ -20,7 +20,7 @@
 	const unsubscribeAllSubjectsData = allSubjectsData.subscribe(it => {
 		allSubjects = it;
     });
-    
+
     let curriculumSubjectIds = [];
 	const unsubscribeMyCurriculumSubjectIds = myCurriculumSubjectIds.subscribe(it => {
 		curriculumSubjectIds = it;
@@ -39,7 +39,7 @@
 
 </script>
 
-<SectionTitle sectionTitle="If I Decided to Choose"/>
+<SectionTitle sectionTitle="Employers are looking for these skills"/>
 <table>
     <thead>
         <tr>
@@ -61,7 +61,7 @@
     </tbody>
 </table>
 
-<SectionTitle sectionTitle="…then these jobs also match"/>
+<SectionTitle sectionTitle="Possible matches with these skills"/>
 <ul class="profiles">
     {#each potentialMatchingJobs as potentialMatchingJob}
     <li>
