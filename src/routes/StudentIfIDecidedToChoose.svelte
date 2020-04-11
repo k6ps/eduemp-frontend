@@ -53,7 +53,7 @@
             {#if recommendedSubjectIds.includes(subject.id) && !curriculumSubjectIds.includes(subject.id)}
                 <tr>
                     <td>{subject.title}</td>
-                    <td>{subject.employerNeeds > 0 ? 'yes' : 'no'}</td>
+                    <td>{subject.employerNeeds > 0 ? subject.employerNeeds : 'no'}</td>
                     <td><a class="button" on:click="{addRecommendedSubjectToMyCurriculum(subject.id)}">+</a></td>
                 </tr>
             {/if}
