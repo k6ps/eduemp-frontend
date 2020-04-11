@@ -54,3 +54,5 @@ export const allSubjectsData = readable([
 export const myCurriculumSubjectIds = writable(["subject1", "subject3"]);
 
 export const myInterestedInSubjectIds = writable(["subject2", "subject4"]);
+
+export const myRecommendedSubjectIds = writable(["subject4", "subject5", "subject6"]);
