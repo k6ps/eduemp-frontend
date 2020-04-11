@@ -1,5 +1,17 @@
 <script>
 	import SectionTitle from '../components/SectionTitle.svelte';
+    import AddSubjectButtonAndDialog from '../components/AddSubjectButtonAndDialog.svelte';
+    import { allSubjectsData, myInterestedInSubjectIds } from '../stores.js';
+
+    let allSubjects = [];
+	const unsubscribeAllSubjectsData = allSubjectsData.subscribe(it => {
+		allSubjects = it;
+    });
+    
+    let mySubjectIds = [];
+	const unsubscribeMyInterestedInSubjectIds = myInterestedInSubjectIds.subscribe(it => {
+		mySubjectIds = it;
+    });
 </script>
 
 <SectionTitle sectionTitle="I Am Interested In"/>
@@ -12,16 +24,16 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Subject 2</td>
-            <td>no</td>
-            <td>30</td>
-        </tr>
-        <tr>
-            <td>Subject 3</td>
-            <td>no</td>
-            <td>no</td>
-        </tr>
+        {#each allSubjects as subject}
+            {#if mySubjectIds.includes(subject.id)}
+                <tr>
+                    <td>{subject.title}</td>
+                    <td>{subject.uniersityOffers ? 'yes' : 'no'}</td>
+                    <td>{subject.employerNeeds ? 'yes' : 'no'}</td>
+                </tr>
+            {/if}
+        {/each}
     </tbody>
 </table>
-<a class="button">Add a Subject</a>
+<AddSubjectButtonAndDialog mySubjectIdsSource={'myInterestedInSubjectIds'}/>
+

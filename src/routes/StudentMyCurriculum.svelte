@@ -34,4 +34,4 @@
         {/each}
     </tbody>
 </table>
-<AddSubjectButtonAndDialog />
+<AddSubjectButtonAndDialog mySubjectIdsSource={'myCurriculumSubjectIds'}/>

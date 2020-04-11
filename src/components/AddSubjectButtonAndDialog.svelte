@@ -1,5 +1,7 @@
 <script>
-    import { allSubjectsData, myCurriculumSubjectIds } from '../stores.js';
+    import { allSubjectsData, myCurriculumSubjectIds, myInterestedInSubjectIds } from '../stores.js';
+
+    export let mySubjectIdsSource; 
 
     let allSubjects = [];
 	const unsubscribeAllSubjectsData = allSubjectsData.subscribe(it => {
@@ -7,7 +9,10 @@
     });
     
     let mySubjectIds = [];
-	const unsubscribeMyCurriculumSubjectIds = myCurriculumSubjectIds.subscribe(it => {
+    const unsubscribeMyCurriculumSubjectIds = (mySubjectIdsSource == 'myInterestedInSubjectIds') ? 
+    myInterestedInSubjectIds.subscribe(it => {
+		mySubjectIds = it;
+    }) : myCurriculumSubjectIds.subscribe(it => {
 		mySubjectIds = it;
     });
 
@@ -22,7 +27,11 @@
     function addSelectedSubjectAndCloseAddSubjectDialog() {
         if (showAddSubjectDialog) {
             if (selectedSubjectId && selectedSubjectId != '' && !mySubjectIds.includes(selectedSubjectId)) {
-                myCurriculumSubjectIds.update(it => [...it, selectedSubjectId]);
+                if (mySubjectIdsSource == 'myInterestedInSubjectIds') {
+                    myInterestedInSubjectIds.update(it => [...it, selectedSubjectId]);
+                } else {
+                    myCurriculumSubjectIds.update(it => [...it, selectedSubjectId]);
+                }
             }
             showAddSubjectDialog = false;
         }
@@ -49,4 +58,4 @@
         <a class="button" on:click="{cancelAndCloseAddSubjectDialog}">Cancel</a>
     </div>
 {/if}
-<a class="button" on:click="{openAddSubjectDialog}">Add a Subjectttt</a>
+<a class="button" on:click="{openAddSubjectDialog}">Add a Subject</a>
