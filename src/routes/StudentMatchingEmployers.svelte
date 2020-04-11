@@ -32,24 +32,34 @@
         }
     ];
 
+    let filterValue;
     let filteredMatchingJobs = matchingJobs;
+
+    function filterMatchingJobs() {
+        if (!filterValue || filterValue == '') {
+            filteredMatchingJobs = matchingJobs;
+        } else {
+            filteredMatchingJobs = [];
+            matchingJobs.forEach(it => {
+                if (it.jobField && it.jobField.code && filterValue == it.jobField.code) {
+                    filteredMatchingJobs = [...filteredMatchingJobs, it];
+                }
+            });
+        }
+    }
 </script>
 
 <SectionTitle sectionTitle="Matching Jobs"/>
-<select>
+<select bind:value={filterValue} on:change="{filterMatchingJobs}">
     <option value="" selected="selected">-- All Fields --</option>
     <option value="marketing">Marketing</option>
     <option value="management">Management</option>
     <option value="it">IT</option>
 </select>
 <ul class="profiles">
+    {#each filteredMatchingJobs as filteredMatchingJob}
     <li>
-        <JobMatchItem jobMatch={filteredMatchingJobs[0]}/>
+        <JobMatchItem jobMatch={filteredMatchingJob}/>
     </li>
-    <li>
-        <JobMatchItem jobMatch={filteredMatchingJobs[1]}/>
-    </li>
-    <li>
-        <JobMatchItem jobMatch={filteredMatchingJobs[2]}/>
-    </li>
+    {/each}
 </ul>
