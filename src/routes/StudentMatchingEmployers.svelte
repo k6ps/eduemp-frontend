@@ -1,11 +1,11 @@
 <script>
     import SectionTitle from '../components/SectionTitle.svelte';
     import JobMatchItem from '../components/JobMatchItem.svelte';
-    
+
     const matchingJobs = [
         {
             organizationName: 'Company 1',
-            jobField: { 
+            jobField: {
                 code: 'marketing',
                 label: 'Marketing',
             },
@@ -14,7 +14,7 @@
         },
         {
             organizationName: 'Company 2',
-            jobField: { 
+            jobField: {
                 code: 'management',
                 label: 'Management',
             },
@@ -23,7 +23,7 @@
         },
         {
             organizationName: 'Company 33',
-            jobField: { 
+            jobField: {
                 code: 'it',
                 label: 'IT',
             },

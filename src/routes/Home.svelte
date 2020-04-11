@@ -38,7 +38,7 @@
 		</div>
 		<div class="col col-30">
 			<h2>Student</h2>
-			<ul>
+			<ul class="ul-bullet">
 				<li>
 					Fast forward your career - choose a path that matters to the employer of your dreams
 				</li>
