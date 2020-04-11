@@ -1,38 +1,13 @@
 <script>
     import SectionTitle from '../components/SectionTitle.svelte';
+    import { allSubjectsData } from '../stores.js';
+
+    let allSubjects = [];
     
-    const allSubjects = [
-        {
-            id: "subject1",
-            title: "Subject 1",
-            employerNeeds: true
-        },
-        {
-            id: "subject2",
-            title: "Subject 2",
-            employerNeeds: true
-        },
-        {
-            id: "subject3",
-            title: "Subject 333",
-            employerNeeds: false
-        },
-        {
-            id: "subject4",
-            title: "Subject 4",
-            employerNeeds: false
-        },
-        {
-            id: "subject5",
-            title: "Subject 5",
-            employerNeeds: true
-        },
-        {
-            id: "subject6",
-            title: "Subject 6",
-            employerNeeds: true
-        },
-    ];
+	const unsubscribeAllSubjectsData = allSubjectsData.subscribe(it => {
+		allSubjects = it;
+    });
+    
     let mySubjectIds = ["subject1", "subject3"];
 
     let selectedSubjectId = '';
