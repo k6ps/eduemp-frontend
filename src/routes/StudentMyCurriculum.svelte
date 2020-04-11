@@ -28,7 +28,7 @@
             {#if mySubjectIds.includes(subject.id)}
                 <tr>
                     <td>{subject.title}</td>
-                    <td>{subject.employerNeeds ? 'yes' : 'no'}</td>
+                    <td>{subject.employerNeeds > 0 ? 'yes' : 'no'}</td>
                 </tr>
             {/if}
         {/each}

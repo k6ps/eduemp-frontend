@@ -29,7 +29,7 @@
                 <tr>
                     <td>{subject.title}</td>
                     <td>{subject.uniersityOffers ? 'yes' : 'no'}</td>
-                    <td>{subject.employerNeeds ? 'yes' : 'no'}</td>
+                    <td>{subject.employerNeeds > 0 ? 'yes' : 'no'}</td>
                 </tr>
             {/if}
         {/each}
