@@ -28,8 +28,8 @@ jobs:
             echo Logging in to Docker repository: $IMAGE_REPOSITORY_URL
             echo $DIGITALOCEAN_REGISTRY_API_KEY | docker login -u $DIGITALOCEAN_REGISTRY_API_KEY --password-stdin $IMAGE_REPOSITORY_URL
             docker tag $IMAGE_ORG_NAME/$IMAGE_NAME:$TAG $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
-            echo Pushing image: $IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
-            docker push $IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
+            echo Pushing image: $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
+            docker push $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
       # - run:
       #     name: Deploy app to Digital Ocean Server via Docker
       #     command: |
