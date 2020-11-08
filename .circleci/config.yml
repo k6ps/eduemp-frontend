@@ -10,37 +10,43 @@ jobs:
       #     password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout # check out the code in the project directory
-      - add_ssh_keys:
-          fingerprints:
-            - "44:ec:0b:90:29:c2:8a:63:76:9e:71:2d:cf:0e:e4:25"
-      - run: echo "hello world" # run the `echo` command
-      - run:
-          name: Set variables
-          command: |
-            echo 'export TAG=0.1.${CIRCLE_BUILD_NUM}' >> $BASH_ENV
-            echo 'export IMAGE_ORG_NAME=smartpick' >> $BASH_ENV
-            echo 'export IMAGE_NAME=frontend' >> $BASH_ENV
-            echo 'export IMAGE_REPOSITORY_URL=registry.digitalocean.com/k6ps-container-registry' >> $BASH_ENV
-            echo 'export CONTAINER_NAME=smartpick-frontend' >> $BASH_ENV
-      - setup_remote_docker:
-          docker_layer_caching: false
-      - run:
-          name: Build and push Docker image
-          command: |
-            echo Building image: $IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
-            docker build -t $IMAGE_ORG_NAME/$IMAGE_NAME:$TAG .
-            echo Logging in to Docker repository: $IMAGE_REPOSITORY_URL
-            echo $DIGITALOCEAN_REGISTRY_API_KEY | docker login -u $DIGITALOCEAN_REGISTRY_API_KEY --password-stdin $IMAGE_REPOSITORY_URL
-            docker tag $IMAGE_ORG_NAME/$IMAGE_NAME:$TAG $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
-            echo Pushing image: $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
-            docker push $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
-      - run:
-          # name: Deploy app to Digital Ocean Server via Docker
-          # command: |
-          #   ssh -o StrictHostKeyChecking=no k6ps@157.230.99.225 "/bin/bash docker stop $CONTAINER_NAME && docker run -d --rm -p 80:5000 --name $CONTAINER_NAME $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG"      - run:
-          name: Deploy app to Digital Ocean Server via Docker
-          command: |
-            ssh -o StrictHostKeyChecking=no k6ps@157.230.99.225 \<< EOF
-              docker stop $CONTAINER_NAME; 
-              docker run -d --rm -p 80:5000 --name $CONTAINER_NAME $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
-            EOF
+      - run: echo "=== Building... ==="
+      - run: echo "=== There is not that much to build right now ==="
+      - when:
+          condition:
+            equal: [ master, << pipeline.git.branch >> ]
+          steps:
+            - run: echo "=== On master branch - deploying to production... ==="
+            - add_ssh_keys:
+                fingerprints:
+                  - "44:ec:0b:90:29:c2:8a:63:76:9e:71:2d:cf:0e:e4:25"
+            - run:
+                name: Set variables
+                command: |
+                  echo 'export TAG=0.1.${CIRCLE_BUILD_NUM}' >> $BASH_ENV
+                  echo 'export IMAGE_ORG_NAME=smartpick' >> $BASH_ENV
+                  echo 'export IMAGE_NAME=frontend' >> $BASH_ENV
+                  echo 'export IMAGE_REPOSITORY_URL=registry.digitalocean.com/k6ps-container-registry' >> $BASH_ENV
+                  echo 'export CONTAINER_NAME=smartpick-frontend' >> $BASH_ENV
+            - setup_remote_docker:
+                docker_layer_caching: false
+            - run:
+                name: Build and push Docker image
+                command: |
+                  echo Building image: $IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
+                  docker build -t $IMAGE_ORG_NAME/$IMAGE_NAME:$TAG .
+                  echo Logging in to Docker repository: $IMAGE_REPOSITORY_URL
+                  echo $DIGITALOCEAN_REGISTRY_API_KEY | docker login -u $DIGITALOCEAN_REGISTRY_API_KEY --password-stdin $IMAGE_REPOSITORY_URL
+                  docker tag $IMAGE_ORG_NAME/$IMAGE_NAME:$TAG $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
+                  echo Pushing image: $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
+                  docker push $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
+            - run:
+                # name: Deploy app to Digital Ocean Server via Docker
+                # command: |
+                #   ssh -o StrictHostKeyChecking=no k6ps@157.230.99.225 "/bin/bash docker stop $CONTAINER_NAME && docker run -d --rm -p 80:5000 --name $CONTAINER_NAME $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG"      - run:
+                name: Deploy app to Digital Ocean Server via Docker
+                command: |
+                  ssh -o StrictHostKeyChecking=no k6ps@157.230.99.225 \<< EOF
+                    docker stop $CONTAINER_NAME; 
+                    docker run -d --rm -p 80:5000 --name $CONTAINER_NAME $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
+                  EOF
