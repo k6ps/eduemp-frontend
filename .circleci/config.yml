@@ -42,5 +42,5 @@ jobs:
           command: |
             ssh -o StrictHostKeyChecking=no k6ps@157.230.99.225 \<< EOF
               docker stop $CONTAINER_NAME; 
-              docker run -d --rm -p 80:5000 --name $CONTAINER_NAME $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG"
+              docker run -d --rm -p 80:5000 --name $CONTAINER_NAME $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
             EOF
