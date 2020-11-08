@@ -10,6 +10,9 @@ jobs:
       #     password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout # check out the code in the project directory
+      - add_ssh_keys:
+          fingerprints:
+            - "44:ec:0b:90:29:c2:8a:63:76:9e:71:2d:cf:0e:e4:25"
       - run: echo "hello world" # run the `echo` command
       - run:
           name: Set variables
@@ -18,6 +21,7 @@ jobs:
             echo 'export IMAGE_ORG_NAME=smartpick' >> $BASH_ENV
             echo 'export IMAGE_NAME=frontend' >> $BASH_ENV
             echo 'export IMAGE_REPOSITORY_URL=registry.digitalocean.com/k6ps-container-registry' >> $BASH_ENV
+            echo 'export CONTAINER_NAME=smartpick-frontend' >> $BASH_ENV
       - setup_remote_docker:
           docker_layer_caching: false
       - run:
@@ -30,7 +34,7 @@ jobs:
             docker tag $IMAGE_ORG_NAME/$IMAGE_NAME:$TAG $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
             echo Pushing image: $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
             docker push $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
-      # - run:
-      #     name: Deploy app to Digital Ocean Server via Docker
-      #     command: |
-      #       ssh -o StrictHostKeyChecking=no k6ps@157.230.99.225 "/bin/bash ./deploy_app.sh $IMAGE_ORG_NAME/$IMAGE_NAME:$TAG"
+      - run:
+          name: Deploy app to Digital Ocean Server via Docker
+          command: |
+            ssh -o StrictHostKeyChecking=no k6ps@157.230.99.225 "/bin/bash docker stop $CONTAINER_NAME && docker run -d --rm -p 80:5000 --name $CONTAINER_NAME $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG"
