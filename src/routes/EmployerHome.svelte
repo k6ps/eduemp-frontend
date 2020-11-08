@@ -1,7 +1,7 @@
 <script>
 	import EmployerMyRequirements from './EmployerMyRequirements.svelte';
 	import EmployerMatchingStudents from './EmployerMatchingStudents.svelte';
-	import AddEMailToWaitList from './AddEMailToWaitList.svelte';
+	import AddEMailToWaitList from '../components/AddEMailToWaitList.svelte';
 </script>
 
 <div class="content">
