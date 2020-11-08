@@ -5,16 +5,11 @@
 </script>
 
 <div class="content">
-    <div>
-        <AddEMailToWaitList/>
-    </div>
     <div class="wrapper wrapper-of-boxes">
         <div class="col col-50 col-box">
-            <span>Testss</span>
-            <EmployerMyRequirements/>
+            <AddEMailToWaitList/>
         </div>
         <div class="col col-50 col-box">
-            <EmployerMatchingStudents/>
         </div>
 	</div>
 </div>
