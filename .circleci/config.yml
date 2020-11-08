@@ -35,6 +35,12 @@ jobs:
             echo Pushing image: $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
             docker push $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
       - run:
+          # name: Deploy app to Digital Ocean Server via Docker
+          # command: |
+          #   ssh -o StrictHostKeyChecking=no k6ps@157.230.99.225 "/bin/bash docker stop $CONTAINER_NAME && docker run -d --rm -p 80:5000 --name $CONTAINER_NAME $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG"      - run:
           name: Deploy app to Digital Ocean Server via Docker
           command: |
-            ssh -o StrictHostKeyChecking=no k6ps@157.230.99.225 "/bin/bash docker stop $CONTAINER_NAME && docker run -d --rm -p 80:5000 --name $CONTAINER_NAME $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG"
+            ssh k6ps@157.230.99.225 << EOF
+              docker stop $CONTAINER_NAME; 
+              docker run -d --rm -p 80:5000 --name $CONTAINER_NAME $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG"
+            EOF
