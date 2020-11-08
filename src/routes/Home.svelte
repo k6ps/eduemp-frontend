@@ -12,10 +12,10 @@
 	<div class="wrapper">
 		<div class="col col-50">
 			<div class="slogan">
-				<!-- Students want to be hired, <br class="hideonmob">
+				Students need internship opportunities, <br class="hideonmob">
 				Employers are looking for talent, <br class="hideonmob">
-				University programs are not able to keep up – <br class="hideonmob"> -->
-				<span class="green">Smartpick brings higer education closer to career.</span>
+				University programmes are not able to keep up – <br class="hideonmob">
+				<span class="green">SmartPick brings them on the same page.</span>
 			</div>
 			<div>
 				<AddEMailToWaitList/>
@@ -29,9 +29,10 @@
 				</ul>
 			</Router> -->
 		</div>
-		<div class="col col-50 col-vid">
+		<!-- <div class="col col-50 col-vid">
 			<iframe class="youtube" src="https://www.youtube.com/embed/IXkDFJkWSWU?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
+		 -->
 	</div>
 </div>
 <div class="content">
