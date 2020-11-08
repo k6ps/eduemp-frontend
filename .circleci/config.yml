@@ -3,13 +3,9 @@ jobs:
   build:
     docker: 
       - image: cimg/base:2020.11
-      # - image: cimg/node:14.10.1
     resource_class: small
-      #   auth:
-      #     username: mydockerhub-user
-      #     password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
-      - checkout # check out the code in the project directory
+      - checkout
       - run: echo "=== Building... ==="
       - run: echo "=== There is not that much to build right now ==="
       - when:
@@ -41,9 +37,6 @@ jobs:
                   echo Pushing image: $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
                   docker push $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG
             - run:
-                # name: Deploy app to Digital Ocean Server via Docker
-                # command: |
-                #   ssh -o StrictHostKeyChecking=no k6ps@157.230.99.225 "/bin/bash docker stop $CONTAINER_NAME && docker run -d --rm -p 80:5000 --name $CONTAINER_NAME $IMAGE_REPOSITORY_URL/$IMAGE_ORG_NAME/$IMAGE_NAME:$TAG"      - run:
                 name: Deploy app to Digital Ocean Server via Docker
                 command: |
                   ssh -o StrictHostKeyChecking=no k6ps@157.230.99.225 \<< EOF
