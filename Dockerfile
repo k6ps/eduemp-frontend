@@ -2,9 +2,9 @@ FROM node:12-alpine
 
 RUN apk update && apk upgrade
 
-WORKDIR /app
+COPY . /app
 
-VOLUME /app
+WORKDIR /app
 
 EXPOSE 5000
 
