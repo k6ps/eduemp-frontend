@@ -31,7 +31,6 @@ main {
 header {
 	padding: 18px 0;
 	background: #fff;
-	border-bottom: 1px solid #9500FF;
 }
 .hero {
 	color: #9500FF;
@@ -104,6 +103,13 @@ footer {
 	display: flex;
 	flex-direction: column;
   justify-content: center;
+}
+
+@media only screen and (min-width: 1240px) {
+	.col-padding {
+		padding-left: 240px;
+		padding-right: 240px;
+	}
 }
 
 @media only screen and (max-width: 1240px) {
@@ -360,12 +366,12 @@ h2 {
 }
 .green {
 	color: #00F4B7;
+	font-weight: 700;
 }
 .slogan {
 	font-size: 1.6em;
-	line-height: 1.4em;
+	line-height: 1.6em;
 	margin-bottom: 30px;
-	font-weight: 700;
 	white-space:nowrap;
 }
 .center-headline {

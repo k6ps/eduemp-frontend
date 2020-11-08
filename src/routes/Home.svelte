@@ -37,8 +37,9 @@
 </div>
 <div class="content">
 	<div class="wrapper">
-		<div class="col col-100 center-headline">
-			<h1 class="center-headline">Benefits</h1>
+		<div class="col col-100 col-padding center-headline">
+			<h1 class="center-headline">How do we do it?</h1>
+			<p>SmartPick integrates with Jira so all the internship tasks can be created in the everyday working environment for the IT companies. If a task is marked as a SmartPick task in Jira it will be pulled into out system and displayed to students looking for internship. The stundent can then take intership "bites" from different companies to complete the internship.</p>
 		</div>
 		<div class="col col-30">
 			<h2>Student</h2>
