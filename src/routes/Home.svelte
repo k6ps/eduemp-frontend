@@ -1,11 +1,11 @@
 <script>
-	import { Router, Link, Route } from "svelte-routing";
+	// import { Router, Link, Route } from "svelte-routing";
+	// import StudentHome from "./StudentHome.svelte";
+	// import EmployerHome from "./EmployerHome.svelte";
+	// import UniversityHome from "./UniversityHome.svelte";
+	import AddEMailToWaitList from '../components/AddEMailToWaitList.svelte';
 
-	import StudentHome from "./StudentHome.svelte";
-	import EmployerHome from "./EmployerHome.svelte";
-	import UniversityHome from "./UniversityHome.svelte";
-
-	export let url = "/";
+	// export let url = "/";
 </script>
 
 <div class="hero">
@@ -17,14 +17,17 @@
 				University programs are not able to keep up – <br class="hideonmob">
 				<span class="green">SmartPick brings them on the same page</span>
 			</div>
-			<Router url="{url}">
+			<div>
+				<AddEMailToWaitList/>
+			</div>
+			<!-- <Router url="{url}">
 				<h3>Pick your role:</h3>
 				<ul class="role-selection">
 					<li><a class="button" href="student">Student</a></li>
 					<li><a class="button" href="employer">Employer</a></li>
 					<li><a class="button" href="university">University</a></li>
 				</ul>
-			</Router>
+			</Router> -->
 		</div>
 		<div class="col col-50 col-vid">
 			<iframe class="youtube" src="https://www.youtube.com/embed/IXkDFJkWSWU?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
