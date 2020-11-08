@@ -1,7 +1,7 @@
 <script>
 	let eMailAddress = '';
 
-    function openAddSubjectDialog() {
+    function addToInterestedList() {
         alert("Thank you, " + eMailAddress + ", for your interest!");
     }
 </script>
