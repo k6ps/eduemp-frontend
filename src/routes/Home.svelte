@@ -43,10 +43,10 @@
 			<h2>Student</h2>
 			<ul class="ul-bullet">
 				<li>
-					Fast forward your career - choose a path that matters to the employer of your dreams
+					Easy access to most relevant internships and practical assignments
 				</li>
 				<li>
-					Design your study journey to support your career from the beginning
+					Design your study journey through practical work to support your career from the beginning
 				</li>
 				<li>
 					Get hired while you're studying
@@ -57,13 +57,13 @@
 			<h2>Employer</h2>
 			<ul class="ul-bullet">
 				<li>
-					You can help to create an education path for the talents you want to hire
+					Opportunity to create an education path for the talents you want to hire
 				</li>
 				<li>
-					Help to  desing an education journey to suit recruitment needs
+					Outsource tasks and discover great talent
 				</li>
 				<li>
-					Give suggestions to all parties, what is the skillset need in the market
+					Strengthen your employer brand and recruit more efficiently
 				</li>
 			</ul>
 		</div>
