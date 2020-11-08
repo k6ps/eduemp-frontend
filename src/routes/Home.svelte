@@ -12,10 +12,10 @@
 	<div class="wrapper">
 		<div class="col col-50">
 			<div class="slogan">
-				Students want to be hired, <br class="hideonmob">
+				<!-- Students want to be hired, <br class="hideonmob">
 				Employers are looking for talent, <br class="hideonmob">
-				University programs are not able to keep up – <br class="hideonmob">
-				<span class="green">SmartPick brings them on the same page</span>
+				University programs are not able to keep up – <br class="hideonmob"> -->
+				<span class="green">Smartpick brings higer education closer to career.</span>
 			</div>
 			<div>
 				<AddEMailToWaitList/>
