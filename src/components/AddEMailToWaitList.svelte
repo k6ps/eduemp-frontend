@@ -10,7 +10,7 @@
 </script> -->
 
 <div class="add-email-to-waiting-list">
-    <span><b>Interested?</b> Leave us your email by clicking the button here, and we'll get in touch!</span><br>
+    <h3>Sounds interesting?</h3>
     <!-- <span>I am a: </span>
     <label>
         <input type="radio" bind:group={role} value={'student'}>
@@ -26,5 +26,5 @@
     </label>
     <input bind:value={eMailAddress} placeholder="My email" />
     <a class="button" on:click="{addToInterestedList}">I am interested!</a> -->
-    <a class="button" href="https://forms.gle/JMNRKJegiYnBoMga8">I am interested!</a>
+    <a class="button" target="_blank" href="https://forms.gle/JMNRKJegiYnBoMga8">Get in touch!</a>
 </div>
